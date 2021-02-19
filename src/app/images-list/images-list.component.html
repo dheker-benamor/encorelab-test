@@ -1,0 +1,23 @@
+<br>
+<div class="row">
+  <div class="col-3">
+  <input (input)="search($event.target.value)" class="form-control" placeholder="search bar" type="number" >
+  </div>
+
+</div>
+<br>
+<div class="row">
+  <div *lazyFor="let image of list" class="col-3 ">
+    <div style="text-align: center;border-color: #932432;height: 350px" class="card shadow navbar-dark rounded-c ">
+      <div class="">
+        <img [lazyLoad]="image.photo" class="card-img" style="width: 200px;height: 200px"  alt=""/>
+      </div>
+      <hr style="border-color: #932432;">
+      <h4> {{ image.author }}</h4>
+      <h6> {{ image.text }}</h6>
+      <button  (click)="addToFavorites(image)" class="form-control btn-outline-dark">Add to favorites</button>
+
+    </div>
+  </div>
+
+</div>
